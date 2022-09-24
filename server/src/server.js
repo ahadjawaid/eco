@@ -3,15 +3,15 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require("body-parser");
 const connect = require("./utilities/connect")
-const routes = require("./routes");
+const keys = require('./config');
 require('./models/Fund');
 require('./models/Project');
 require('./models/User');
 require('./controller/passport');
 
 
-const port = process.env.PORT;
-const mongoURI = 'mongodb://mongo:27017/test';
+const port = keys.port;
+const mongoURI = keys.mongoURI;
 
 const app = express();
 
@@ -29,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 connect(mongoURI);
-routes(app);
+require('./routes/authRoutes')(app);
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

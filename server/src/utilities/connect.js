@@ -4,7 +4,7 @@ module.exports = (mongoURI) => {
   const connect = () => {
     if (mongoURI) {
       mongoose.connect(mongoURI)
-              .then(() => console.info(`Successfully connected to ${mongoURI}`))
+              .then(() => console.info(`Successfully connected to Database`))
               .catch((err) => {
                   console.error(`Error connecting to database : ${err}`)
                   return process.exit(1)

@@ -1,18 +1,15 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-    oauthID: {
+    oAuthID: {
         type: String,
-        required: false,
         unique: true,
     },
     firstName: {
         type: String,
-        required: true,
     },
     lastName: {
         type: String,
-        required: true,
     },
     country: {
         type: String,
@@ -20,12 +17,10 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
         unique: true,
     },
     phoneNumber: {
         type: String,
-        required: true,
     },
 });
 

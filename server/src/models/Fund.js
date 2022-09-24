@@ -1,6 +1,6 @@
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
 
-const fundSchema = new Schema({
+const fundSchema = new mongoose.Schema({
     email: { type: String, required: true },
     phoneNumber: { type: String, required: true },
     industry: { type: String, required: true },
@@ -8,8 +8,8 @@ const fundSchema = new Schema({
     totalAmount: { type: Number, required: true },
     givenAmount: { type: Number, default: 0 },
     rating: { type: Number },
-    recievers: [ { type: Schema.Types.ObjectId, ref: 'user' } ],
-    _user: { type: Schema.Types.ObjectId, ref: 'user' },
+    recievers: [ { type: mongoose.Schema.Types.ObjectId, ref: 'user' } ],
+    _user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     startDate: Date,
     endDate: Date,
 });
