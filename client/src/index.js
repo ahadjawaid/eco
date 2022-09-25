@@ -7,8 +7,8 @@ import App from "./App";
 import "./styles/index.scss";
 import "./styles/app.scss";
 import "./styles/grid.scss";
-import "./styles/text.scss"
-import "./styles/utils.scss"
+import "./styles/text.scss";
+import "./styles/utils.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = configureStore({

@@ -1,0 +1,40 @@
+.grid-wrapper-home {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: minmax(55%, 1fr) 2fr;
+    grid-template-rows: 1fr;
+}
+
+.logo {
+    position: absolute;
+    width: 249px;
+    height: 72px;
+    left: 0px;
+    top: 32px;
+}
+
+.slogan {
+    color: #31572C;
+}
+
+.leftSide {
+    grid-column: 1;
+    background: linear-gradient(313.37deg, rgba(112, 237, 154, 0.88) 21.07%, rgba(104, 151, 222, 0.8712) 100%);
+}
+
+.rightSide {
+    grid-column: 2;
+    grid-row: 1;
+    background: #cbf1f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-gradient {
+    background: linear-gradient(119.31deg, rgba(255, 255, 255, 0.4) 20.56%, rgba(255, 253, 253, 0.1) 80.31%) !important;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 1rem 2rem !important;
+
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px !important;
+}

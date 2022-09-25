@@ -1,41 +1,64 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { connect } from "react-redux";
+// Pages
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Fund from "./pages/Fund";
-import Project from "./pages/Project"
+import Project from "./pages/Project";
+import ProfilePage from "./pages/ProfilePage";
+// Components
 import Sidebar from "./components/Sidebar";
 import Profile from "./components/Profile";
-import { Button } from "@mui/material";
+// Redux action
+import { fetchUser } from './store/actions';
 
-const App = () => {
-  const [auth, setAuth] = useState(false);
+class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchUser();
+    console.log(this.props.auth);
+  }
 
-  return (
-    <BrowserRouter>
-      {
-        auth ?
-          <div className="app grid-wrapper">
-            <div className="topbar" sx={{
-              backgroundColor: "blue",
-            }} />
-            <Sidebar />
-            <Profile />
-            <div className="page page-box">
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/project" element={<Fund />} />
-                <Route path="/fund" element={<Project />} />
-              </Routes>
-            </div>
-          </div> :
-          <div>
-            <Home />
-            <Button onClick={() => {setAuth(true)}}>Login</Button>
-          </div>
-      }
-    </BrowserRouter>
-  );
+  mainApp () {
+    return (
+      <div className="app grid-wrapper">
+        <div className="topbar" sx={{
+          backgroundColor: "blue",
+        }} />
+        <Sidebar />
+        <Profile />
+        <div className="page page-box">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/fund" element={<Fund />} />
+            <Route path="/project" element={<Project />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </div>
+      </div>
+    );
+  }
+
+  landingApp () {
+    return(
+      <div>
+        <Home />
+      </div>
+    );
+  }
+
+  render () {
+    return (
+      <BrowserRouter>
+        { this.props.auth ? this.mainApp() : this.landingApp() }
+      </BrowserRouter>
+
+    );
+  }
 };
 
-export default App;
+const mapStateToProps = ({ auth }) => {
+  return { auth };
+}
+
+export default connect(mapStateToProps, { fetchUser })(App);

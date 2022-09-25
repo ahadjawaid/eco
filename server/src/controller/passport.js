@@ -24,9 +24,7 @@ passport.use(new GoogleStrategy({
             'https://www.googleapis.com/oauth2/v3/userinfo.email'],
     proxy: true
  }, async (accessToken, refreshToken, profile, done) => {
-
     const existingUser = await User.findOne({ oAuthID: profile.id })
-       
     if (existingUser) {
         return done(null, existingUser);
     } 

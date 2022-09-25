@@ -10,7 +10,7 @@ const Dashboard = () => {
       }}
     >
       <Typography variant="h2" component="h3">
-        Welcome to the dashboard page!
+        Welcome!
       </Typography>
     </Container>
   );

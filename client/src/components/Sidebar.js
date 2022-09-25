@@ -4,6 +4,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import logo from '../assets/logo.svg';
 
 const links = [
   {
@@ -87,6 +88,7 @@ const Sidebar = () => {
           borderRadius: "1rem",
         }}
       >
+        <img src={logo} alt="company logo" />
         <Box sx={{
           display: 'flex',
           flexDirection: "column",
@@ -100,6 +102,8 @@ const Sidebar = () => {
           className="centerLogo"
           color="inherit"
           variant="text"
+          component={Link}
+          href="/api/logout"
         >
           <LogoutIcon sx={{marginRight: '4px'}}  />
           <span>Sign Out</span>

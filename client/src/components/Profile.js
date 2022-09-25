@@ -1,10 +1,13 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Typography, Button } from "@mui/material";
+import { Link as LinkRouter } from "react-router-dom";
 
 const Profile = () => {
   return (
     <div className='topbar'>
       <Button
+      component={LinkRouter}
+      to="/profile"
       sx={{
           display: "flex",
           flexDirection: "row",

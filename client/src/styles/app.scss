@@ -5,28 +5,27 @@ ul {
 }
 
 .app {
-  background: rgba(180, 232, 235, 0.62) !important;
+  background: rgba(192, 229, 232, 0.88) !important;
 }
 
 .page-box {
-  background-color: palegoldenrod;
   margin-bottom: 20px;
   margin-right: 20px;
   border-radius: 20px;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
   background: linear-gradient(238.74deg, rgba(140, 141, 131, 0.301) -1.38%, rgba(206, 207, 189, 0.105) 99.62%);
 }
 
 
 .background-gradient-side {
   border-image-source: linear-gradient(172.02deg, #FFFFFF 1.38%, rgba(236, 241, 173, 0.8) 96.99%) !important;
+  background: linear-gradient(171.38deg, rgba(255, 255, 255, 0.4) 0.86%, rgba(255, 255, 255, 0.1) 98.18%) !important;
   border-radius: 30px !important;
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
 .button-side {
-  border: 1px solid #CFC7C7 !important;
+  // border: 1px solid #CFC7C7 !important;
   border-radius: 25px !important;
   padding: 1rem 5rem !important;
   text-transform: "capitalize" !important;
@@ -35,5 +34,21 @@ ul {
   &:hover {
     background-image: linear-gradient(267.56deg, rgba(41, 166, 25, 0.5) 0%, rgba(20, 101, 196, 0.5) 99.44%) !important;
     color: white;
+  }
+}
+
+.listItem {
+  background: linear-gradient(119.86deg, rgba(255, 254, 254, 0.4) 16.17%, rgba(255, 255, 255, 0.1) 77.3%) !important;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 25px !important;
+  min-width: 90% !important;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:active {
+    transform: scale(1.0);
   }
 }
